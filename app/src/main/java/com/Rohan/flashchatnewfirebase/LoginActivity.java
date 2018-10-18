@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
 
     // TODO: Add member variables here:
-    // UI references.
+    // UI references
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private FirebaseAuth mAuth;
@@ -69,11 +69,11 @@ public class LoginActivity extends AppCompatActivity {
     private void attemptLogin() {
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
-        if (email.equals("") || password.equals("")) {
+        if (email.isEmpty() || password.isEmpty()) {
             return;
         }
         else{
-            Toast.makeText(this,"LOG IN IN PROGRESS",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"LOGIN IN PROGRESS",Toast.LENGTH_SHORT).show();
         }
 
 
@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                Log.d("FlashChat","Singning in with email : "+task.isSuccessful());
+                Log.d("FlashChat","Signing in with email : "+task.isSuccessful());
          if(!task.isSuccessful())
          {
              Log.d("FlashChat","failed login : "+task.getException());
