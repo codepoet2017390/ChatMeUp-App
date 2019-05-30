@@ -31,7 +31,7 @@ class ChatListAdapter(private val mActivity: Activity, ref: DatabaseReference, p
 
         }
 
-        override fun onChildRemoved(dataSnapshot: DataSnapshot) {
+        override fun onChildRemoved(dataSnapshot:  DataSnapshot) {
 
         }
 
